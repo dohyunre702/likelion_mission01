@@ -1,0 +1,9 @@
+server:
+  servlet:
+    encoding:
+      force-response: true
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
