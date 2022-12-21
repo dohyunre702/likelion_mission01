@@ -23,10 +23,10 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .consumes(getConsumeContentTypes())
                 .produces(getProduceContentTypes())
-                .apiInfo(getApiInfo())
+                //.apiInfo(getApiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.example.bamdule.controller"))
-                .paths(PathSelectors.ant("/member/**"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.dhlee.controller"))
+                .paths(PathSelectors.ant("/api/v1/"))
                 .build();
     }
 
@@ -43,6 +43,7 @@ public class SwaggerConfig {
         return produces;
     }
 
+    /*
     private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
                 .title("API")
@@ -51,4 +52,6 @@ public class SwaggerConfig {
                 .version("1.0")
                 .build();
     }
+
+     */
 }
