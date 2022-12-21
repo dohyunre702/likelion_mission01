@@ -2,7 +2,6 @@ package com.example.dhlee.service.impl;
 
 import com.example.dhlee.config.security.JwtTokenProvider;
 import com.example.dhlee.domain.User;
-import com.example.dhlee.domain.dto.SignUpResultDto;
 import com.example.dhlee.domain.dto.UserDto;
 import com.example.dhlee.domain.dto.UserJoinRequest;
 import com.example.dhlee.repository.UserRepository;

@@ -12,11 +12,13 @@ import lombok.Getter;
 public class UserJoinRequest {
     private String username;
     private String password;
+    private String emailAddress;
 
     public User toEntity() {
         return User.builder()
                 .username(this.username)
                 .password(this.password)
+                .emailAddress(this.emailAddress)
                 .build();
     }
 }

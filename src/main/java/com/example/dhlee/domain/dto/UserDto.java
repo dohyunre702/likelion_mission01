@@ -1,5 +1,6 @@
 package com.example.dhlee.domain.dto;
 
+import com.example.dhlee.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,8 +18,16 @@ public class UserDto {
     private String username;
     private String password;
     private String emailAddress;
+
     private LocalDateTime registeredAt;
     private LocalDateTime updatedAt;
     private LocalDateTime deletedAt;
 
+    public User toEntity() {
+        return User.builder()
+                .username(this.username)
+                .password(this.password)
+                .emailAddress(this.emailAddress)
+                .build();
+    }
 }

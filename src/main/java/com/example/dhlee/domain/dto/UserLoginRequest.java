@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
-//회원가입 때 입력받을 정보
+//로그인 시 입력받을 정보
 @AllArgsConstructor
 @Getter
 @Builder
