@@ -1,5 +1,6 @@
 package com.example.dhlee.repository.impl;
 
+import com.example.dhlee.domain.User;
 import com.example.dhlee.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +16,7 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public UserDetails getByUid(String uid) {
-        return userRepository.getByUid(uid);
+    public User getById(Long id) {
+        return userRepository.getById(id);
     }
 }
