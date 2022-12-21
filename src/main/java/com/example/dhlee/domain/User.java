@@ -9,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,14 +27,11 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //인덱스값
     private Long id;
 
-    @Column(nullable = false, unique = true) //token 생성 위한 유저id
-    private String uid;
+    @Column(nullable = false, unique = true) //유저네임 (토큰생성)
+    private String username;
 
     @Column(nullable = false) //비밀번호
     private String password;
-
-    @Column(nullable = false, unique = true) //유저닉네임
-    private String userName;
 
     @Column(nullable = false) //이메일주소
     private String emailAddress;
@@ -58,12 +54,7 @@ public class User implements UserDetails {
         return this.roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
     }
 
-    @JsonProperty //key값 매핑해 jpa로 전달
-    @Override
-    public String getUsername() { //계정 이름(아이디) 리턴
-        return this.uid;
-    }
-
+    //key값 매핑해 jpa로 전달
     @JsonProperty
     @Override
     public boolean isAccountNonExpired() { //계정 만료여부 리턴
