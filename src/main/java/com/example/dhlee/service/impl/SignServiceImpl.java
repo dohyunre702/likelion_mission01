@@ -20,12 +20,13 @@ public class SignServiceImpl {
     }
 
     //회원가입
-    @Override
     public UserDto signUp(UserJoinRequest userJoinRequest) {
 
-        //uid 중복 체크
+        //같은 이름이 있는 중복회원 X
         userRepository.findByUsername(userJoinRequest.getUsername())
-
+                .ifPresent(username -> {
+                    throw new IllegalStateException("이미 존재하는 회원입니다.");
+                });
 
 
         //중복 체크 통과 뒤 회원가입 = .save()
@@ -38,5 +39,4 @@ public class SignServiceImpl {
                 .emailAddress(savedUser.getEmailAddress())
                 .build();
     }
-
 }

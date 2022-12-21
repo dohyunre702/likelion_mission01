@@ -1,12 +1,12 @@
 package com.example.dhlee.repository;
 
 import com.example.dhlee.domain.User;
-import com.example.dhlee.domain.dto.UserDto;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    User getById(Long id);
-    void findByUsername(String username);
+    Optional<User> findByUsername(String username);
+
 }
