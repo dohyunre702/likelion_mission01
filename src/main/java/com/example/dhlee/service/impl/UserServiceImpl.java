@@ -40,7 +40,9 @@ public class UserServiceImpl {
                 .build();
     }
 
-
     public UserDto login(UserLoginRequest userLoginRequest) {
+        //1. id 찾기 (있다면 2로, 없다면 에러 반환)
+        //2. password 찾기 (일치하면 3으로, 없다면 에러 반환)
+        //3. dto 빌더 패턴으로 생성해 리턴 (dto에 token 포함)
     }
 }
