@@ -18,18 +18,17 @@ public class UserServiceImpl {
 
     public UserRepository userRepository;
     public JwtTokenProvider jwtTokenProvider;
-    private UserDto userDto;
 
     //회원가입
-    public UserDto join(UserJoinRequest request) { //리턴된 dto는 어디로 가는가?
+    public UserDto join(UserJoinRequest request) {
 
         //같은 이름이 있는 중복회원 => 가입 불가
         userRepository.findByUsername(request.getUsername())
                 .ifPresent(user -> {
-                    throw new SignException(ErrorCode.DUPLICATED_USER_NAME, String.format("username:%s", request.getUsername(), ---)); //?
+                    throw new SignException(ErrorCode.DUPLICATED_USER_NAME, String.format("username:%s", request.getUsername()));
                 });
 
-        //중복 체크 통과 뒤 회원가입 = .save()
+        //중복 체크 통과 뒤 회원가입 = .save() > entity로 값이 저장되어 이동
         User savedUser = userRepository.save(request.toEntity());
 
         return UserDto.builder()

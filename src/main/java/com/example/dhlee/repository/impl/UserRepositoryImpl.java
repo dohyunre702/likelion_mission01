@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @RequiredArgsConstructor
 @Service
 public class UserRepositoryImpl {
@@ -18,5 +20,6 @@ public class UserRepositoryImpl {
     public UserRepositoryImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+
 
 }

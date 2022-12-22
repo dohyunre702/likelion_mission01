@@ -1,7 +1,13 @@
 package com.example.dhlee.exception;
 
-//RuntimeException을 상속받은 SignException 클래스
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class SignException extends RuntimeException {
+    //RuntimeException을 상속받은 SignException 클래스
     private ErrorCode errorCode;
     private String message;
 

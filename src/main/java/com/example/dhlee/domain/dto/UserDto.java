@@ -6,7 +6,6 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -25,6 +24,7 @@ public class UserDto {
 
     public User toEntity() {
         return User.builder()
+                .id(this.id)
                 .username(this.username)
                 .password(this.password)
                 .emailAddress(this.emailAddress)
