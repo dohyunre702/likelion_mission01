@@ -1,9 +1,6 @@
 package com.example.dhlee.controller;
 
-import com.example.dhlee.domain.dto.Response;
-import com.example.dhlee.domain.dto.UserDto;
-import com.example.dhlee.domain.dto.UserJoinRequest;
-import com.example.dhlee.domain.dto.UserJoinResponse;
+import com.example.dhlee.domain.dto.*;
 import com.example.dhlee.service.impl.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,8 +18,13 @@ public class UserController {
     @PostMapping("/join")
     public Response<UserJoinResponse> join(@RequestBody UserJoinRequest userJoinRequest) {
         UserDto userDto = userService.join(userJoinRequest);
-        return Response.success(new UserJoinResponse(userDto.getId(), userDto.getUsername())); //
+        return Response.success(new UserJoinResponse(userDto.getId(), userDto.getUsername()));
+    }
 
+    @PostMapping("/login")
+    public Response<UserLoginResponse> login(@RequestBody UserLoginRequest userLoginRequest) {
+        UserDto userDto = userService.login(userLoginRequest);
+        return Response.success(new UserLoginResponse());
     }
 
 }
