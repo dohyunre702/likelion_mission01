@@ -15,7 +15,7 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(nullable = false)
     private String title;
@@ -24,12 +24,9 @@ public class Post {
     private String body;
 
     @Column
-    private LocalDateTime registeredAt;
+    private LocalDateTime created_at;
 
     @Column
-    private LocalDateTime updatedAt;
-
-    @Column
-    private LocalDateTime deletedAt;
+    private LocalDateTime last_modified_at;
 
 }

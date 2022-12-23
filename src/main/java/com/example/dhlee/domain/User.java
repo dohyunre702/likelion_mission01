@@ -25,7 +25,7 @@ public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //인덱스값
-    private Long id;
+    private int id;
 
     @Column(nullable = false, unique = true) //유저네임 (토큰생성)
     private String username;
