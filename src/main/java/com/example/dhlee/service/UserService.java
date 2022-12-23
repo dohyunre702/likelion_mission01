@@ -4,6 +4,6 @@ import com.example.dhlee.domain.dto.*;
 
 public interface UserService {
     UserDto join (UserJoinRequest userJoinRequest); //회원가입
-    UserLoginResponse signIn (UserLoginRequest userLoginRequest); //로그인
+    UserLoginResponse login (UserLoginRequest userLoginRequest); //로그인
 
 }

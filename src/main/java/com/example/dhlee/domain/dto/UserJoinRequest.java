@@ -10,15 +10,13 @@ import lombok.Getter;
 @Getter
 @Builder
 public class UserJoinRequest {
-    private String username;
+    private String user_name;
     private String password;
-    private String emailAddress;
 
     public User toEntity() {
         return User.builder()
-                .username(this.username)
+                .user_name(this.user_name)
                 .password(this.password)
-                .emailAddress(this.emailAddress)
                 .build();
     }
 }

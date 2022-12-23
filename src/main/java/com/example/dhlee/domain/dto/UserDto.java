@@ -13,21 +13,19 @@ import java.time.LocalDateTime;
 @Getter
 @Builder
 public class UserDto {
-    private int id;
-    private String username;
+    private int user_id;
+    private String user_name;
     private String password;
-    private String emailAddress;
 
-    private LocalDateTime registeredAt;
-    private LocalDateTime updatedAt;
-    private LocalDateTime deletedAt;
+    private LocalDateTime registered_at;
+    private LocalDateTime updated_at;
+    private LocalDateTime removed_at;
 
     public User toEntity() {
         return User.builder()
-                .id(this.id)
-                .username(this.username)
+                .user_id(this.user_id)
+                .user_name(this.user_name)
                 .password(this.password)
-                .emailAddress(this.emailAddress)
                 .build();
     }
 }

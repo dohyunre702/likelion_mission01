@@ -9,6 +9,6 @@ import lombok.Getter;
 public class UserJoinResponse {
     private int id;
     // private String password;
-    private String username;
+    private String user_name;
 
 }
