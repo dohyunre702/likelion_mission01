@@ -17,6 +17,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    //JPA 연관관계 매핑
+    @ManyToOne(targetEntity = User.class)
+    @JoinColumn(name = "user_id")
+    private int user_id;
+
     @Column(nullable = false)
     private String title;
 
