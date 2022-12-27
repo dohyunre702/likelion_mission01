@@ -1,7 +1,6 @@
 package com.example.dhlee.domain.dto;
 
 import com.example.dhlee.domain.Post;
-import com.example.dhlee.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
