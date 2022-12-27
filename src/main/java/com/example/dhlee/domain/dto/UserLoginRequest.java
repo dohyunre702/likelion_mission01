@@ -10,12 +10,12 @@ import lombok.Getter;
 @Getter
 @Builder
 public class UserLoginRequest {
-    private String username;
+    private String user_name;
     private String password;
 
     public User toEntity() {
         return User.builder()
-                .username(this.username)
+                .user_name(this.user_name)
                 .password(this.password)
                 .build();
     }

@@ -28,7 +28,7 @@ public class JwtTokenProvider {
 
     @Value("${springboot.jwt.secret}")
     private String secretKey = "secretKey";
-    private final long tokenValid = 1000L * 60 * 60;
+    private final long tokenValid = 1000L * 60 * 60l;
 
     @PostConstruct
     protected void init() { //TokenProvider 내 secretKey 초기화

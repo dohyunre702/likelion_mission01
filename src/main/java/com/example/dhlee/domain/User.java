@@ -3,8 +3,6 @@ package com.example.dhlee.domain;
 import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 //user 테이블과 연결하는 클래스
 @Entity
@@ -35,9 +33,9 @@ public class User {
     @Column
     private LocalDateTime removed_at;
 
-    @ElementCollection(fetch = FetchType.EAGER) //컬렉션객체임을 jpa에게 announce
-    @Builder.Default
-    private List<String> role = new ArrayList<>();
+    @Column
+    private int role; //1 : normal, 2 : admin
+
 
 
 }
