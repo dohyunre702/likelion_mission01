@@ -47,6 +47,7 @@ public class UserServiceImpl {
 
     public UserDto login(UserLoginRequest userLoginRequest) {
         //1. id 찾기 (없다면 2로, 있다면 에러 반환) ㄱ 아래 에러 발생 중
+        /*
         User selectedUser = userRepository.findByUsername(userLoginRequest.getUser_name())
                 .ifPresent(user -> {
                     throw new SignException(ErrorCode.DUPLICATED_USER_NAME, "");
@@ -59,4 +60,9 @@ public class UserServiceImpl {
         String token = JwtTokenUtil.createToken(selectedUser.getUser_name(), secretKey, expiredTimeMs);
         return token;
     }
+
+         */
+        return null;
+    }
 }
+

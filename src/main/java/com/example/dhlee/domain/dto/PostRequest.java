@@ -1,6 +1,6 @@
 package com.example.dhlee.domain.dto;
 
-import com.example.dhlee.domain.User;
+import com.example.dhlee.domain.Post;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -12,10 +12,10 @@ public class PostRequest {
     private String title;
     private String body;
 
-    public User toEntity() {
-        return User.builder()
-                .user_name(this.title)
-                .password(this.body)
+    public Post toEntity() {
+        return Post.builder()
+                .title(this.title)
+                .body(this.body)
                 .build();
     }
 }

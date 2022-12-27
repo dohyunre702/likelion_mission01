@@ -23,7 +23,7 @@ public class PostServiceImpl {
     }
 
     //1. 포스트 등록
-    public String newPost(PostRequest postRequest) {
+    public PostDto newPost(PostRequest postRequest) {
         //1) Dto를 entity로 변환
         Post postEntity = postRequest.toEntity();
         //2) 리포지토리에게 entity를 db에 저장하게 함
@@ -33,9 +33,9 @@ public class PostServiceImpl {
     }
 
     //2. 포스트 상세 조회
-    public String getPost(PostDto postDto) {
+    public PostDto getPost(PostRequest postRequest) {
         //1) id로 데이터 가져오기
-        Post postEntity = postRepository.findById(id).orElse(null);
+        //Post postEntity = postRepository.findById(postRequest.getTitle()).orElse(null);
         //2) 가져온 데이터 dto로 반환
         return null;
     }
@@ -64,7 +64,7 @@ public class PostServiceImpl {
     //5. 포스트 삭제
     public String deletePost(PostDto postDto) {
         //1) 삭제대상 찾기
-        Post deleteEntity = postRepository.findById(id).orElse(null);
+        Post deleteEntity = postRepository.findById(postDto.getId()).orElse(null);
         //2) DB에 대상이 있다면 제거
         if (deleteEntity != null) {
             postRepository.delete(deleteEntity);

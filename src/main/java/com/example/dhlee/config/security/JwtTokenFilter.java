@@ -66,3 +66,4 @@ public class JwtTokenFilter extends OncePerRequestFilter {
         SecurityContextHolder.getContext().setAuthentication(authenticationToken); //권한 부여 완료
         filterChain.doFilter(request, response);
     }
+}
